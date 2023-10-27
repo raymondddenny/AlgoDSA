@@ -49,6 +49,19 @@ public class Main {
         return -1;
     }
 
+    public static void bubbleSort(int[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < (arr.length - 1 - i); j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
 //        Boolean result = linearSearch(new int[]{1, 2, 3, 4, 5}, 3);
@@ -57,8 +70,16 @@ public class Main {
 //        Boolean resultBinary = binarySearch(new int[]{1, 2, 3, 4, 5}, 3);
 //        System.out.println("Binary search - The target is on array ? " + resultBinary);
 
-        int resultCrystal = twoCrystalBreak(new Boolean[]{false, false, false, false, false, false, false, false, false, true, false, false, false, false, false});
-        System.out.println("Crystal search - The target is on array ? " + resultCrystal);
+//        int resultCrystal = twoCrystalBreak(new Boolean[]{false, false, false, false, false, false, false, false, false, true, false, false, false, false, false});
+//        System.out.println("Crystal search - The target is on array ? " + resultCrystal);
+
+
+        int[] unorderedArr = new int[]{5, 4, 3, 2, 1};
+        bubbleSort(unorderedArr);
+
+        for (int i = 0; i < unorderedArr.length; i++) {
+            System.out.println(unorderedArr[i]);
+        }
 
     }
 }
